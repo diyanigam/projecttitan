@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/static/page1.css">
+        <title> Flood</title>
+        <div class = 'box'></div>
+        <div class="header">
+            Flood
+        </div>
+        </head>
+
+
+        <body style="background-color: #1E1E1E;">
+
+            <table class = "table1">
+                <tr>
+                  <td>Current Routes </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img img src="{{url_for('static', filename='map2.jpg')}}" alt="Current Routes">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Optimised Routes</td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="{{url_for('static', filename='map1.jpg')}}" alt="Optimised Routes">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Comparison:</td>
+                </tr>
+    
+                <tr>
+                    <td><div class="boxies">
+                        <br>
+                        <div class = "timyboxie">
+                            Earlier:
+                            <div class="bihariclass123"><h1>162.2 KL</h1></div>
+                            <p>per km<sup>2</sup></p>
+    
+                        </div>
+                        <br>
+                        <div class = "timyboxie">
+                            Now:
+                            <div class="bihariclass123" style="color: #1C48BF;"><h1>180.5 KL</h1></div>
+                            <p>per km<sup>2</sup></p>
+    
+                        </div>
+                    </div></td>
+                </tr>
+                <tr>
+                    <td><div class="boxies">
+                        <br>
+                        <div class = "timyboxie">
+                            Earlier:
+                            <div class="bihariclass123" style="margin-left: 25%; font-size: 150%; margin-top: -12%;"><h1>60%</h1></div>
+                        </div>
+                        <br>
+                        <div class = "timyboxie">
+                            Now:
+                            <div class="bihariclass123" style="color: #1C48BF;margin-left: 25%; font-size: 150%; margin-top: -12%;"><h1>69%</h1></div>
+                            
+            
+                        </div>
+                    </div></td>
+                </tr>
+    
+                <tr>
+                    <td><div class="boxie"><div class = 'txtb'>Water increase to unit area:</div></div></td>
+                </tr>
+    
+    
+            </table>
+    
+        </body>
+</html>
+
+
+

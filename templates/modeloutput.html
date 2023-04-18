@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+   <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/static/modeloutput.css">
+
+        <title>Project Titan</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"> </script>
+   </head>
+
+<body style="background-color: #162235;">
+   <header>
+      <nav style = "z-index: 100;">
+         <div class="logo"><a href="#">PROJECT TITAN</a></div>
+         <div class="menu">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/#aboutus">About</a></li>
+                <li><a href="/add">Add Maps</a></li>
+            </ul>
+         </div>
+      </nav>
+   </header>
+   
+   <div class="title">
+      <h2>California</h2>
+      <h2>California</h2>
+   </div>
+
+
+   <div class="parallax">
+      <img class = "bg1" src="/static/bg1.png">
+      <div class="container" id="aboutus" style="margin-top: -10px;background:linear-gradient(180deg, #051226 0%, #182D45 51.04%, #000A1E 100%);">
+         <table class = "table1">
+         <tr>
+            <td>Current Routes </td>
+         </tr>
+         <tr>
+            <td>
+            <img class ="img1" src="{{url_for('static', filename='map2.jpg')}}" alt="Current Routes">
+            </td>
+         </tr>
+         <tr>
+            <td>Optimised Routes</td>
+         </tr>
+         <tr>
+            <td>
+            <img class ="img2" src="{{url_for('static', filename='map1.jpg')}}" alt="Optimised Routes">
+            </td>
+         </tr>
+         <tr>
+            <td>Comparison:</td>
+         </tr>
+
+         <tr>
+            <td><div class="boxies">
+               <br>
+               <div id="chart-container" style="width: 20vw; position: absolute;height: 25vw; margin-left: 60px;">
+                  <canvas id="myChart"></canvas>
+               </div>
+
+               <div class = "timyboxie">
+                  Earlier:
+                  <div class="bihariclass123"><h1>162.2 KL</h1></div>
+                     <p>per km<sup>2</sup></p>
+               </div>
+                  <br>
+               <div class = "timyboxie">
+                  Now:
+                  <div class="bihariclass123" style="color: #1C48BF;"><h1>180.5 KL</h1></div>
+                  <p>per km<sup>2</sup></p>
+               </div>
+            </div></td>
+         </tr>
+
+         <tr>
+            <td>
+            <div class="boxies">
+               <div id="chart-container" style="width: 20vw; position: absolute;height: 25vw; margin-left: 60px; margin-top: 30px;">
+                  <canvas id="myChart1"></canvas>
+               </div>
+                  <br>
+               <div class = "timyboxie">
+                  Earlier:
+                  <div class="bihariclass123" style="margin-left: 25%; font-size: 150%; margin-top: -12%;"><h1>60%</h1></div>
+               </div>
+                  <br>
+               <div class = "timyboxie">
+                  Now:
+                  <div class="bihariclass123" style="color: #1C48BF;margin-left: 25%; font-size: 150%; margin-top: -12%;"><h1>69%</h1></div>
+               </div>
+            </div>
+            </td>
+         </tr>
+
+         <tr>
+         <td>
+            <div class="boxie">
+               <div class = 'txtb'>Water increase to unit area:</div>
+            </div>
+         </td>
+         </tr>
+      
+         </table>
+
+
+
+        <img class = "bg1" src="/static/background1.gif">
+
+
+
+      </div>
+   </div>
+   </div>
+
+
+<script>
+
+      const data = {
+    labels: ['Optimised', 'Unoptimised'],
+    datasets: [{
+     backgroundColor: ['rgb(242,166,191)','rgb(28,62,151)'],
+      data: [65, 59]
+    }]
+  };
+  const options = {
+   plugins: {
+      title: {
+         display: true,
+         text: 'Custom Chart Title'
+      }
+   },
+   responsive: true,
+   maintainAspectRatio: false,
+   legend: {
+        display: false
+    },
+    tooltips: {
+        callbacks: {
+           label: function(tooltipItem) {
+                  return tooltipItem.yLabel;
+           }
+        }
+    },
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero: true
+        }
+      }]
+    }};
+
+   const ctx = document.getElementById('myChart').getContext('2d');
+   const myChart = new Chart(ctx, {
+    type: 'bar',
+    data: data,
+    options: options
+  });
+
+  const ctx1 = document.getElementById('myChart1').getContext('2d');
+  const myChart1 = new Chart(ctx1, {
+    type: 'bar',
+    data: data,
+    options: options
+  });
+
+</script>
+
+</body>
+</html>
