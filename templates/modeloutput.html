@@ -38,7 +38,7 @@
          </tr>
          <tr>
             <td>
-            <img class ="img1" src="{{url_for('static', filename='map2.jpg')}}" alt="Current Routes">
+            <img class ="img1" src="{{url_for('static', filename='map1.jpg')}}" alt="Current Routes">
             </td>
          </tr>
          <tr>
@@ -46,7 +46,7 @@
          </tr>
          <tr>
             <td>
-            <img class ="img2" src="{{url_for('static', filename='map1.jpg')}}" alt="Optimised Routes">
+            <img class ="img2" src="{{url_for('static', filename='map2.jpg')}}" alt="Optimised Routes">
             </td>
          </tr>
          <tr>
@@ -56,24 +56,24 @@
          <tr>
             <td><div class="boxies">
                <br>
-               <div id="chart-container" style="width: 20vw; position: absolute;height: 25vw; margin-left: 60px;">
+               <div id="chart-container" style="width: 20vw; position: absolute;height: 25vw; margin-left: 60px; margin-top: 20px;">
                   <canvas id="myChart"></canvas>
                </div>
 
                <div class = "timyboxie">
-                  Earlier:
-                  <div class="bihariclass123"><h1>162.2 KL</h1></div>
+                  Water Distribution Earlier:
+                  <div class="bihariclass123"><h1>130.54 KL</h1></div>
                      <p>per km<sup>2</sup></p>
                </div>
                   <br>
                <div class = "timyboxie">
-                  Now:
-                  <div class="bihariclass123" style="color: #1C48BF;"><h1>180.5 KL</h1></div>
+                  Water Distribution Earlier:
+                  <div class="bihariclass123" style="color: #1C48BF;"><h1>106.93 KL</h1></div>
                   <p>per km<sup>2</sup></p>
                </div>
             </div></td>
          </tr>
-
+<!--
          <tr>
             <td>
             <div class="boxies">
@@ -92,12 +92,12 @@
                </div>
             </div>
             </td>
-         </tr>
+         </tr>-->
 
          <tr>
          <td>
             <div class="boxie">
-               <div class = 'txtb'>Water increase to unit area:</div>
+               <div class = 'txtb'>Current Water Efficiency Increase:<b>  18.08%</b></div>
             </div>
          </td>
          </tr>
@@ -120,17 +120,15 @@
       const data = {
     labels: ['Optimised', 'Unoptimised'],
     datasets: [{
-     backgroundColor: ['rgb(242,166,191)','rgb(28,62,151)'],
-      data: [65, 59]
+     backgroundColor: ['rgb(28,62,151)', 'rgb(242,166,191)'],
+      data: [106.93, 130.54]
     }]
   };
   const options = {
-   plugins: {
-      title: {
-         display: true,
-         text: 'Custom Chart Title'
-      }
-   },
+   title: {
+        display: true,
+        text: 'Water Received per unit area'
+      },
    responsive: true,
    maintainAspectRatio: false,
    legend: {
